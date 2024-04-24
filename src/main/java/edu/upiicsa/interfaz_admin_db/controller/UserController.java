@@ -22,7 +22,7 @@ public class UserController {
     private String databaseUrl;
 
     @GetMapping
-    public String loadLogin() {
+    public String loadLogin(User user) {
         return "login";
     }
 
