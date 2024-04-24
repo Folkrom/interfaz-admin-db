@@ -9,18 +9,30 @@
     <title>PostgreSQL Login</title>
 </head>
 <body>
-    <form th:action="@{/login}" method="post" th:object="${user}">
-        <label for="username">Username</label>
-        <input type="text" name="username" th:field="*{username}"/>
-
-        <label for="password">Password</label>
-        <input type="password" name="password" th:field="*{password}">
-
-        <input type="submit" name="login" value="Log in">
-    </form>
-    <div th:if="${error}" class="error">
-        <p th:text="${error}"></p>
+<section>
+    <div class="wave">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+    <div class="box">
+        <img src="/images/logo.png">
+        <div th:if="${error}" class="error errorkeys">
+            <p th:text="${error}"></p>
+        </div>
+        <form th:action="@{/login}" method="post" th:object="${user}">
+            <div class="inputBox">
+                <input type="text" name="username" th:field="*{username}"/>
+                <label for="username">Username</label>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="password" th:field="*{password}">
+                <label for="password">Password</label>
+            </div>
+            <input type="submit" name="login" value="Log in">
+        </form>
+    </div>
+</section>
 
 </body>
 </html>
