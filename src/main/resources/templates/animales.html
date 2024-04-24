@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{css/animales.css}">
+    <title>Animales</title>
+</head>
+<body>
+<h2>Animales</h2>
+<div th:if="${animales}" class="animales">
+    <table>
+        <thead>
+        <tr>
+            <td>No. Habitad</td>
+            <td>Nombre Animal</td>
+            <td>Familia</td>
+            <td>Genero</td>
+            <td>Especie</td>
+            <td>Alimentacion</td>
+            <td>Grupo Sanguineo</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="animal: ${animales}">
+            <td th:text="${animal.getNoHabitad()}"/>
+            <td th:text="${animal.getNombreAnim()}"/>
+            <td th:text="${animal.getFamilia()}"/>
+            <td th:text="${animal.getGenero()}"/>
+            <td th:text="${animal.getEspecie()}"/>
+            <td th:text="${animal.getAlimentacion()}"/>
+            <td th:text="${animal.getGrupoSanguineo()}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
